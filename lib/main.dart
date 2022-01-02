@@ -22,18 +22,18 @@ class _MyAppState extends State<MyApp> {
     Colors.purple
   ];
 
-  Expanded playerAu(int num) {
-    return Expanded(
-      child: TextButton(
-        onPressed: () {
-          // final player = AudioCache();
-          player.play('note${num + 1}.wav');
-        },
-        child: Container(
-          color: audioColors[num],
+  Widget playerAu(int num) {
+    return Flexible(
+      child: Container(
+        color: audioColors[num],
+        child: TextButton(
+          onPressed: () {
+            // final player = AudioCache();
+            player.play('note${num + 1}.wav');
+          },
           child: Center(
             child: Text(
-              'click me ${num + 1}',
+              'sound ${num + 1}',
               style: const TextStyle(color: Colors.black),
             ),
           ),
